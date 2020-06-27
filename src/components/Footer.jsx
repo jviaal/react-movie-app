@@ -12,7 +12,6 @@ function Footer() {
           <img src={TMDBIcon} alt="TMDB-Icon" />
         </div>
       </div>
-      {/* <div className="social-libks"></div> */}
     </FooterStyled>
   );
 }

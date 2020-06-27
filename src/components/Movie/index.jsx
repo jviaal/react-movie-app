@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+
+import Loading from "../Loading/";
 import MovieDetails from "./MovieDetails";
 
 const apiKey = "46653bc02c45b6381c995f1c7a8bbe09";
@@ -8,6 +11,7 @@ function Movie() {
   const { movieID } = useParams();
   const [movie, setMovie] = useState();
   const [crew, setCrew] = useState();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const getMovie = async () => {
       let temp = [];
@@ -22,10 +26,17 @@ function Movie() {
       });
       setMovie(jsonData);
       setCrew(temp);
+      setIsLoading(false);
     };
     getMovie();
   }, [movieID]);
-  return <>{movie && <MovieDetails movie={movie} crew={crew} />}</>;
+  return (
+    <>
+      <AnimatePresence initial={false}>
+        {isLoading ? <Loading /> : <MovieDetails movie={movie} crew={crew} />}
+      </AnimatePresence>
+    </>
+  );
 }
 
 export default Movie;

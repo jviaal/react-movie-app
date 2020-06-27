@@ -29,7 +29,11 @@ function MovieDetails({ movie, crew }) {
   }, [movie]);
 
   return (
-    <MovieDetailsStyled imgURL={movie.backdrop_path}>
+    <MovieDetailsStyled
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      imgURL={movie.backdrop_path}
+    >
       <section className="main-section">
         <div className="content">
           <div className="image-container">

@@ -11,7 +11,7 @@ function Search() {
   const [currentPage, setCurrentPage] = useState();
   const [totalPages, setTotalPages] = useState();
 
-  const a = async () => {
+  const loadMore = async () => {
     let temp = [];
     const url = `https://api.themoviedb.org/3/search/movie?api_key=46653bc02c45b6381c995f1c7a8bbe09&language=en-US&query=${query}&page=${
       currentPage + 1
@@ -50,7 +50,7 @@ function Search() {
         <div className="load-button">
           {console.log(totalPages)}
           {totalPages > currentPage ? (
-            <button onClick={() => a()}>Load More</button>
+            <button onClick={() => loadMore()}>Load More</button>
           ) : (
             <div>End of Results</div>
           )}

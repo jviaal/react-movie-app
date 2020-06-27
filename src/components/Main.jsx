@@ -1,30 +1,30 @@
 import React from "react";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 
-import Slider from "./Slider";
-import TopRatedMoviesTab from "./TopRatedMoviesTab";
+import Home from "./Home";
 import Search from "./Search/";
 import Movie from "./Movie/";
+import TopRated from "./TopRated";
 
 import { MainStyled } from "../styles/MainStyled";
-import { AnimatePresence } from "framer-motion";
 
 function Main() {
+  let location = useLocation();
   return (
     <MainStyled>
-      <Switch>
+      <Switch location={location} key={location.pathname} exit={{ opacity: 0 }}>
         <Route exact path="/">
-          <AnimatePresence>
-            <Slider />
-          </AnimatePresence>
-          <TopRatedMoviesTab />
+          <Home />
         </Route>
         <Route path="/movie/:movieID">
           <Movie />
         </Route>
         <Route path="/search/:query">
           <Search />
+        </Route>
+        <Route path="/top-rated/">
+          <TopRated />
         </Route>
       </Switch>
     </MainStyled>

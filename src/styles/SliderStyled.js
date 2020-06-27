@@ -6,7 +6,8 @@ const smImgURL = "https://image.tmdb.org/t/p/w780";
 
 export const SliderStyled = styled(motion.section)`
   width: 100%;
-  background-image: url(${smImgURL}${(props) => props.imgURL});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
+    url(${smImgURL}${(props) => props.imgURL});
   background-position: center;
   background-size: cover;
   .content {
@@ -14,9 +15,7 @@ export const SliderStyled = styled(motion.section)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 3;
-    padding: 25px;
+    padding: 2rem 25px;
     & > div {
       width: 100%;
     }
@@ -138,6 +137,11 @@ export const SliderStyled = styled(motion.section)`
           font-weight: 500;
         }
       }
+    }
+  }
+  @media (min-width: 1280px) {
+    .content {
+      padding: 2rem 20%;
     }
   }
 `;

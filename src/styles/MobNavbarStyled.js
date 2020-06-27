@@ -2,16 +2,15 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const MobNavbarStyled = styled(motion.nav)`
-  /* height: 100%; */
   width: 100%;
   background-color: #191919;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center !important;
-  position: fixed;
-  margin-top: 100px;
+  justify-content: center;
+  position: absolute;
+  margin-top: 80px;
   top: 0;
   z-index: 10;
   & > div {

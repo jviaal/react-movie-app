@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
-export const MovieDetailsStyled = styled.div`
+export const MovieDetailsStyled = styled(motion.div)`
   & > section {
     padding: 25px;
   }
@@ -74,7 +75,6 @@ export const MovieDetailsStyled = styled.div`
     .cover {
       display: flex;
       overflow-x: scroll;
-      width: 100%;
       background-color: #232323;
       padding: 1rem;
       &::-webkit-scrollbar {

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const SearchStyled = styled.div`
-  padding: 0 25px;
+  padding: 2rem 25px;
   & > h1 {
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
   .load-button {
     width: 100%;
-    /* background-color: #8c8c8c; */
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -25,9 +24,12 @@ export const SearchStyled = styled.div`
     }
   }
   @media (min-width: 600px) {
-    padding: 0 7%;
+    padding: 2rem 7%;
   }
   @media (min-width: 800px) {
-    padding: 0 10%;
+    padding: 2rem 10%;
+  }
+  @media (min-width: 1280px) {
+    padding: 2rem 20%;
   }
 `;

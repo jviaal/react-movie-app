@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body{
         background-color: #191919;
+        min-height: 100vh;
     }
     a{
         text-decoration: none;
