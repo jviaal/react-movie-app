@@ -42,7 +42,6 @@ function App() {
       const upcomRes = await fetch(upcomURL);
       const upcomJsonData = await upcomRes.json();
       const upcomTemp = [];
-      console.log(upcomJsonData);
       upcomJsonData.results.forEach((movie, index) => {
         if (index < 4) {
           upcomTemp.push(movie);

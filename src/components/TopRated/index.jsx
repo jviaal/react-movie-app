@@ -24,7 +24,6 @@ function TopRated() {
         temp.push(data);
       }
     });
-    console.log(temp);
     setMovies(temp);
   };
 

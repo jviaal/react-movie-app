@@ -24,7 +24,6 @@ function Upcoming() {
         temp.push(data);
       }
     });
-    console.log(temp);
     setMovies(temp);
   };
 

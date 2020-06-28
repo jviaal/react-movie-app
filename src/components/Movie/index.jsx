@@ -18,7 +18,6 @@ function Movie() {
       const url = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&language=en-US&append_to_response=images,credits,videos,similar,keywords`;
       const res = await fetch(url);
       const jsonData = await res.json();
-      console.log(jsonData);
       jsonData.credits.crew.forEach((person, index) => {
         if (index < 2) {
           temp.push(person);

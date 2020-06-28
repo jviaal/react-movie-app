@@ -46,7 +46,6 @@ function Search() {
       {searchData && <SearchResults searchData={searchData} />}
       {searchData && (
         <div className="load-button">
-          {console.log(totalPages)}
           {totalPages > currentPage ? (
             <button onClick={() => loadMore()}>Load More</button>
           ) : (
