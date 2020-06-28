@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { Section } from "../../../styles/Styles";
 
-// const smImgURL = "https://image.tmdb.org/t/p/w185";
-const smImgURL = "https://image.tmdb.org/t/p/w780";
-
-export const SliderStyled = styled(motion.section)`
-  width: 100%;
+const smImgURL = "https://image.tmdb.org/t/p/w500";
+const medImgURL = "https://image.tmdb.org/t/p/w780";
+export const SliderStyled = styled(Section)`
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
     url(${smImgURL}${(props) => props.imgURL});
   background-position: center;
@@ -15,31 +13,29 @@ export const SliderStyled = styled(motion.section)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 25px;
-    & > div {
-      width: 100%;
-    }
     .img-container {
       img {
-        margin-top: 0.5rem;
         width: 100%;
         border-radius: 5px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
       }
     }
     .details-container {
+      width: 100%;
       display: flex;
       flex-direction: column;
       margin-top: 1rem;
-      .title-average-container {
+      .title-userscore-container {
         display: flex;
         padding: 0.5rem;
         margin-bottom: 1rem;
         align-items: center;
+        justify-content: center;
         background-color: #fa1027;
         font-weight: 700;
         border-radius: 5px;
-        .average {
+        .user-score {
           background-color: #fff;
           color: #fa1027;
           padding: 0.3rem;
@@ -48,11 +44,11 @@ export const SliderStyled = styled(motion.section)`
           box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         }
         .title {
-          width: 100%;
           text-align: center;
           margin-left: 1rem;
           font-size: 1rem;
           text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+          cursor: pointer;
           h1 {
             a {
               color: #fff;
@@ -64,37 +60,36 @@ export const SliderStyled = styled(motion.section)`
       .overview {
         display: none;
         font-size: 0.75rem;
+        font-weight: 400;
         margin-bottom: 1rem;
       }
-    }
-    .nav-buttons-container {
-      & > button {
-        width: 50%;
-        padding: 0.5rem;
-      }
-      :first-child {
-        background-color: yellow;
-        margin-right: 0.5rem;
+      .nav-buttons-container {
+        & > button {
+          width: 50%;
+          padding: 0.5rem;
+        }
+        :first-child {
+          background-color: yellow;
+          margin-right: 0.5rem;
+        }
       }
     }
   }
   @media (min-width: 600px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
+      url(${medImgURL}${(props) => props.imgURL});
     .content {
-      padding: 2rem 7%;
       flex-direction: row;
-      position: relative;
       .img-container {
-        cursor: pointer;
         width: 50%;
+        min-height: 250px;
       }
       .details-container {
-        flex-direction: column;
-        align-items: flex-start;
+        margin-top: 0;
         margin-left: 2rem;
-        .title-average-container {
+        align-items: flex-start;
+        .title-userscore-container {
           .title {
-            cursor: pointer;
-            text-align: left;
             margin-right: 1rem;
             h1 {
               a {
@@ -118,30 +113,14 @@ export const SliderStyled = styled(motion.section)`
       }
     }
   }
-  @media (min-width: 800px) {
+  @media (min-width: 1024px) {
     .content {
-      padding: 2rem 10%;
-      .img-container {
-        width: 40%;
-      }
       .details-container {
-        .title-average-container {
-          h1 {
-            a {
-              font-size: 1.8rem;
-            }
-          }
-        }
         .overview {
-          font-size: 1.1rem;
-          font-weight: 500;
+          line-height: 1.5rem;
+          font-size: 1rem;
         }
       }
-    }
-  }
-  @media (min-width: 1280px) {
-    .content {
-      padding: 2rem 20%;
     }
   }
 `;

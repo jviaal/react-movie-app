@@ -8,43 +8,27 @@ import UpcomingCard from "./UpcomingCard";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import {
-  DefaultSection,
-  HomeSectionTitle,
-  FlexContainer,
-} from "../../../styles/HomeStyles";
-
+import { Section, SectionTitle, GridContainer } from "../../../styles/Styles";
 import { toFullWidth, fromLeft } from "../../../styles/Variants";
 
-const UpHomecomingSection = styled(DefaultSection)`
+const UpHomecomingSection = styled(Section)`
   background-color: #232323;
-  /* @media (min-width: 600px) {
-    padding: 1rem 7%;
-  }
-  @media (min-width: 800px) {
-    padding: 1rem 10%;
-  } */
-  @media (min-width: 1280px) {
-    .content {
-      padding: 2rem 20%;
-    }
-  }
 `;
 
 function UpcomingSection() {
   const { upcomingMovies } = useContext(Context);
   return (
     <UpHomecomingSection>
-      <HomeSectionTitle>
+      <SectionTitle>
         <motion.h2 animate="visible" initial="hidden" variants={fromLeft}>
           Upcoming Movies
         </motion.h2>
-        <Link to="#">Browse All</Link>
-      </HomeSectionTitle>
+        <Link to="/upcoming">Browse All</Link>
+      </SectionTitle>
       <motion.hr variants={toFullWidth} animate="visible" initial="hidden" />
-      <FlexContainer>
+      <GridContainer>
         <UpcomingCard movies={upcomingMovies} />
-      </FlexContainer>
+      </GridContainer>
     </UpHomecomingSection>
   );
 }

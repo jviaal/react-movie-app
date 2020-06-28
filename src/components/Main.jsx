@@ -2,10 +2,11 @@ import React from "react";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 
-import Home from "./Home";
+import Home from "./Home/";
 import Search from "./Search/";
 import Movie from "./Movie/";
-import TopRated from "./TopRated";
+import TopRated from "./TopRated/";
+import Upcoming from "./Upcoming/";
 
 import { MainStyled } from "../styles/MainStyled";
 
@@ -25,6 +26,9 @@ function Main() {
         </Route>
         <Route path="/top-rated/">
           <TopRated />
+        </Route>
+        <Route path="/upcoming/">
+          <Upcoming />
         </Route>
       </Switch>
     </MainStyled>

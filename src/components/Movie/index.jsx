@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-import Loading from "../Loading/";
+import Loading from "../Loading/Loading";
 import MovieDetails from "./MovieDetails";
 
 const apiKey = "46653bc02c45b6381c995f1c7a8bbe09";

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import SearchResults from "./SearchResults";
 
 import { SearchStyled } from "./SearchStyled";
+// import Loading from "../Loading/Loading";
 
 function Search() {
   let { query } = useParams();
@@ -19,10 +20,7 @@ function Search() {
     const res = await fetch(url);
     const jsonData = await res.json();
     setCurrentPage(currentPage + 1);
-    console.log(currentPage);
-    searchData.forEach((data) => {
-      temp.push(data);
-    });
+    temp = [...searchData];
     jsonData.results.forEach((data) => {
       temp.push(data);
     });

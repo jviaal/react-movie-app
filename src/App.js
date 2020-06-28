@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import Loading from "./components/Loading/";
+import Loading from "./components/Loading/Loading";
 import Navbar from "./components/Navbar";
 import MobNavbar from "./components/MobNavbar";
 import Main from "./components/Main";

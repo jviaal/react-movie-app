@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import {
   MovieCardContainer,
   MovieImageContainer,
-} from "../../../styles/HomeStyles";
+} from "../../../styles/Styles";
 
 function TopRatedCard({ movies }) {
   const imagePath = "https://image.tmdb.org/t/p/w780";

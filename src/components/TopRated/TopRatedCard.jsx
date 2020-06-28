@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-import {
-  MovieCardContainer,
-  MovieImageContainer,
-} from "../../../styles/Styles";
+import { MovieCardContainer, MovieImageContainer } from "../../styles/Styles";
 
-function UpcomingCard({ movies }) {
+function TopRatedCard({ movies }) {
   const imagePath = "https://image.tmdb.org/t/p/w780";
   return (
     <>
@@ -31,4 +28,4 @@ function UpcomingCard({ movies }) {
   );
 }
 
-export default UpcomingCard;
+export default TopRatedCard;

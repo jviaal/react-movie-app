@@ -1,9 +1,8 @@
 import React, { useContext, useState } from "react";
 
 import { Context } from "../../../Context";
+import { SliderStyled } from "./SliderStyled";
 import { Link } from "react-router-dom";
-
-import { SliderStyled } from "../../../styles/SliderStyled";
 import { motion } from "framer-motion";
 
 function Slider() {
@@ -25,31 +24,33 @@ function Slider() {
     }
   };
   return (
-    <SliderStyled imgURL={popularMovies[currentMovieIndex].backdrop_path}>
-      <motion.div
-        className="content"
-        key={currentMovieIndex}
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        exit={{ opacity: 0 }}
-      >
+    <SliderStyled
+      imgURL={popularMovies[currentMovieIndex].backdrop_path}
+      key={currentMovieIndex}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      exit={{
+        opacity: 0,
+        x: 150,
+      }}
+    >
+      <motion.div className="content">
         <motion.div className="img-container">
           <Link to={`/movie/${popularMovies[currentMovieIndex].id}`}>
             <motion.img
               key={currentMovieIndex}
-              animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 50, opacity: 0 }}
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              custom={{ currentMovieIndex }}
               src={imgPath + popularMovies[currentMovieIndex].poster_path}
               alt={popularMovies[currentMovieIndex].title}
             />
           </Link>
         </motion.div>
         <motion.div className="details-container">
-          <div className="title-average-container">
-            <div className="average">
+          <motion.div className="title-userscore-container">
+            <div className="user-score">
               {popularMovies[currentMovieIndex].vote_average}
             </div>
             <div className="title">
@@ -59,7 +60,7 @@ function Slider() {
                 </Link>
               </h1>
             </div>
-          </div>
+          </motion.div>
           <div className="overview">
             {popularMovies[currentMovieIndex].overview}
           </div>
