@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-import { MovieCardContainer, MovieImageContainer } from "../../styles/Styles";
+import {
+  MovieCardContainer,
+  MovieImageContainer,
+} from "../../../styles/Styles";
 
-function TopRatedCard({ movies }) {
+function SectionCard({ movies }) {
   const imagePath = "https://image.tmdb.org/t/p/w780";
   return (
     <>
@@ -28,4 +31,4 @@ function TopRatedCard({ movies }) {
   );
 }
 
-export default TopRatedCard;
+export default SectionCard;

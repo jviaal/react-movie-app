@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import Trailer from "./Trailer";
+
 import { MovieDetailsStyled } from "./MovieDetailsStyled";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function MovieDetails({ movie, crew }) {
   const imagePath = "https://image.tmdb.org/t/p/w780";
   const videoPath = "https://www.youtube.com/watch?v=";
   const [similarMovies, setSimilarMovies] = useState();
+  const [showTrailer, setShowTrailer] = useState(false);
 
   const convertDuration = (num) => {
     var hours = Math.floor(num / 60);
@@ -57,9 +60,23 @@ function MovieDetails({ movie, crew }) {
             <div className="overview">Overview : {movie.overview}</div>
             <div className="trailer">
               {movie.videos.results.length !== 0 ? (
-                <a href={videoPath + movie.videos.results[0].key}>
-                  <button>Trailer</button>
-                </a>
+                <div>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    className="pc-trailer"
+                    onClick={() => setShowTrailer(true)}
+                  >
+                    Trailer
+                  </motion.button>
+                  <a
+                    className="mob-trailer"
+                    href={videoPath + movie.videos.results[0].key}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button>Trailer</button>
+                  </a>
+                </div>
               ) : (
                 "No Trailer Link"
               )}
@@ -110,20 +127,31 @@ function MovieDetails({ movie, crew }) {
           )}
         </div>
       </section>
-      <section className="side-panel-section">
-        <div>Keywords (not yet working) </div>
+      <section className="keywords-section">
+        <div>Keywords</div>
         <div className="keywords">
           {movie.keywords.keywords.length !== 0 ? (
             movie.keywords.keywords.map((key) => (
-              <div key={key.id} className="keyword">
-                <Link to="#">{key.name}</Link>
-              </div>
+              <Link key={key.id} to={`/keyword/${key.id}`}>
+                <motion.div whileHover={{ scale: 1.1 }} className="keyword">
+                  {key.name}
+                </motion.div>
+              </Link>
             ))
           ) : (
             <div>----</div>
           )}
         </div>
       </section>
+      <AnimatePresence>
+        {showTrailer && (
+          <Trailer
+            movie={movie}
+            videoPath={videoPath}
+            setShowTrailer={setShowTrailer}
+          />
+        )}
+      </AnimatePresence>
     </MovieDetailsStyled>
   );
 }

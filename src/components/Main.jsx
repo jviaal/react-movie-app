@@ -7,6 +7,7 @@ import Search from "./Search/";
 import Movie from "./Movie/";
 import TopRated from "./TopRated/";
 import Upcoming from "./Upcoming/";
+import Keyword from "./Keyword";
 
 import { MainStyled } from "../styles/MainStyled";
 
@@ -29,6 +30,9 @@ function Main() {
         </Route>
         <Route path="/upcoming/">
           <Upcoming />
+        </Route>
+        <Route path="/keyword/:keywordID">
+          <Keyword />
         </Route>
       </Switch>
     </MainStyled>

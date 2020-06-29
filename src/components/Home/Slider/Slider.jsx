@@ -40,15 +40,19 @@ function Slider() {
           <Link to={`/movie/${popularMovies[currentMovieIndex].id}`}>
             <motion.img
               key={currentMovieIndex}
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
               src={imgPath + popularMovies[currentMovieIndex].poster_path}
               alt={popularMovies[currentMovieIndex].title}
             />
           </Link>
         </motion.div>
-        <motion.div className="details-container">
+        <motion.div
+          className="details-container"
+          src={imgPath + popularMovies[currentMovieIndex].poster_path}
+          alt={popularMovies[currentMovieIndex].title}
+        >
           <motion.div className="title-userscore-container">
             <div className="user-score">
               {popularMovies[currentMovieIndex].vote_average}

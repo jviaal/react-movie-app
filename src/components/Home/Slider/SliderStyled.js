@@ -3,6 +3,7 @@ import { Section } from "../../../styles/Styles";
 
 const smImgURL = "https://image.tmdb.org/t/p/w500";
 const medImgURL = "https://image.tmdb.org/t/p/w780";
+
 export const SliderStyled = styled(Section)`
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
     url(${smImgURL}${(props) => props.imgURL});

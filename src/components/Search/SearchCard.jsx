@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { MovieCardContainer, MovieImageContainer } from "../../styles/Styles";
 
-function UpcomingCard({ movies }) {
+function SearchCard({ movies }) {
   const imagePath = "https://image.tmdb.org/t/p/w780";
   return (
     <>
@@ -20,7 +20,11 @@ function UpcomingCard({ movies }) {
               />
             </MovieImageContainer>
             <h1> {movie.title}</h1>
-            <h2>{movie.release_date.slice(0, 4)}</h2>
+            {movie.release_date === undefined ? (
+              <h2>-----</h2>
+            ) : (
+              <h2>{movie.release_date.slice(0, 4)}</h2>
+            )}
           </Link>
         </MovieCardContainer>
       ))}
@@ -28,4 +32,4 @@ function UpcomingCard({ movies }) {
   );
 }
 
-export default UpcomingCard;
+export default SearchCard;

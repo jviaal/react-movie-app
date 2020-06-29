@@ -1,17 +1,25 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { motion } from "framer-motion";
+
+const smImgURL = "https://image.tmdb.org/t/p/w500";
+const medImgURL = "https://image.tmdb.org/t/p/w780";
+const lrgImgURL = "https://image.tmdb.org/t/p/original";
 
 export const MovieDetailsStyled = styled(motion.div)`
   & > section {
     padding: 25px;
   }
   .main-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
+      url(${smImgURL}${(props) => props.imgURL});
+    background-position: center;
+    background-size: cover;
     padding: 0;
     .content {
       padding: 25px;
-      background-color: rgba(0, 0, 0, 0.9);
       display: flex;
       flex-direction: column;
+
       .image-container {
         width: 100%;
         img {
@@ -51,6 +59,10 @@ export const MovieDetailsStyled = styled(motion.div)`
             border: none;
             border-radius: 5px;
           }
+          .pc-trailer {
+            cursor: pointer;
+            display: none;
+          }
         }
         .crew {
           padding: 0.5rem 0;
@@ -63,13 +75,6 @@ export const MovieDetailsStyled = styled(motion.div)`
         }
       }
     }
-    ${(props) =>
-      props.imgURL &&
-      css`
-        background-image: url(https://image.tmdb.org/t/p/w780${props.imgURL});
-        background-position: center;
-        background-size: cover;
-      `}
   }
   .similar-movies-section {
     .cover {
@@ -117,25 +122,26 @@ export const MovieDetailsStyled = styled(motion.div)`
       }
     }
   }
-  .side-panel-section {
+  .keywords-section {
     background-color: #232323;
     .keywords {
       margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
-      .keyword {
-        margin: 0 0.5rem 0.5rem 0;
-        padding: 0.5rem;
-        background-color: black;
-        border-radius: 5px;
-        a {
-          color: #fff;
+      a {
+        color: #fff;
+        .keyword {
+          cursor: pointer;
+          margin: 0 0.5rem 0.5rem 0;
+          padding: 0.5rem;
+          background-color: black;
+          border-radius: 5px;
         }
       }
     }
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 650px) {
     & > section {
       padding: 2rem 7%;
     }
@@ -150,6 +156,14 @@ export const MovieDetailsStyled = styled(motion.div)`
         }
         .details-container {
           width: 60%;
+          .trailer {
+            .mob-trailer {
+              display: none;
+            }
+            .pc-trailer {
+              display: flex;
+            }
+          }
         }
       }
     }
@@ -159,6 +173,8 @@ export const MovieDetailsStyled = styled(motion.div)`
       padding: 2rem 10%;
     }
     .main-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
+        url(${medImgURL}${(props) => props.imgURL});
       .content {
         padding: 2rem 10%;
         .details-container {
@@ -170,11 +186,6 @@ export const MovieDetailsStyled = styled(motion.div)`
           }
         }
       }
-      ${(props) =>
-        props.imgURL &&
-        css`
-          background-image: url(https://image.tmdb.org/t/p/w1280${props.imgURL});
-        `}
     }
   }
   @media (min-width: 1024px) {
@@ -195,6 +206,8 @@ export const MovieDetailsStyled = styled(motion.div)`
   }
   @media (min-width: 1440px) {
     .main-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
+        url(${lrgImgURL}${(props) => props.imgURL});
       .content {
         .image-container {
           width: 25%;
@@ -212,11 +225,6 @@ export const MovieDetailsStyled = styled(motion.div)`
           }
         }
       }
-      ${(props) =>
-        props.imgURL &&
-        css`
-          background-image: url(https://image.tmdb.org/t/p/original${props.imgURL});
-        `}
     }
   }
 `;
