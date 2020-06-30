@@ -1,7 +1,7 @@
 import React from "react";
 import TMDBIcon from "../../images/tmdb.svg";
 
-import { FooterStyled } from "../../styles/FooterStyled";
+import { FooterStyled } from "./FooterStyled";
 
 function Footer() {
   return (

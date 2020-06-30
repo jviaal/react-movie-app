@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 
-import { Context } from "../Context";
+import { Context } from "../../Context";
 import { withRouter, useHistory } from "react-router-dom";
 
-import { MobNavbarStyled } from "../styles/MobNavbarStyled";
+import { MobNavbarStyled } from "./MobNavbarStyled";
 
-import SearchIcon from "../images/search.svg";
+import SearchIcon from "../../images/search.svg";
 
 const variant = {
   visible: {

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const smImgURL = "https://image.tmdb.org/t/p/w500";
 const medImgURL = "https://image.tmdb.org/t/p/w780";
-const lrgImgURL = "https://image.tmdb.org/t/p/original";
+const lrgImgURL = "https://image.tmdb.org/t/p/w1280";
 
 export const MovieDetailsStyled = styled(motion.div)`
   & > section {

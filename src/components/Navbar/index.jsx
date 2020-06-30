@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 
-import { Context } from "../Context";
 import { withRouter, useHistory } from "react-router-dom";
+import { Context } from "../../Context";
 
-import { NavbarStyled } from "../styles/NavbarStyled";
+import { NavbarStyled } from "./NavbarStyled";
 
-import MenuIcon from "../images/menu.svg";
-import CloseIcon from "../images/close.svg";
-import SearchIcon from "../images/search.svg";
+import MenuIcon from "../../images/menu.svg";
+import CloseIcon from "../../images/close.svg";
+import SearchIcon from "../../images/search.svg";
 
 function Navbar() {
   const { showNavbar, setShowNavbar, searchQuery, setSearchQuery } = useContext(

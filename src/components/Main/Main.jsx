@@ -2,14 +2,14 @@ import React from "react";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 
-import Home from "./Home/";
-import Search from "./Search/";
-import Movie from "./Movie/";
-import TopRated from "./TopRated/";
-import Upcoming from "./Upcoming/";
-import Keyword from "./Keyword";
+import Home from "../Home";
+import Search from "../Search";
+import Movie from "../Movie";
+import TopRated from "../TopRated";
+import Upcoming from "../Upcoming";
+import Keyword from "../Keyword";
 
-import { MainStyled } from "../styles/MainStyled";
+import { MainStyled } from "./MainStyled";
 
 function Main() {
   let location = useLocation();

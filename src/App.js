@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import Loading from "./components/Loading/Loading";
-import Navbar from "./components/Navbar";
-import MobNavbar from "./components/MobNavbar";
-import Main from "./components/Main";
+import Navbar from "./components/Navbar/";
+import MobNavbar from "./components/MobNavbar/";
+import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 
 import { Context } from "./Context";
