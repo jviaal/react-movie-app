@@ -9,12 +9,15 @@ export const SliderStyled = styled(Section)`
     url(${smImgURL}${(props) => props.imgURL});
   background-position: center;
   background-size: cover;
+  min-height: 657px;
+  padding-bottom: 0;
   .content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     .img-container {
+      min-height: 490px;
       img {
         width: 100%;
         border-radius: 5px;
@@ -76,14 +79,23 @@ export const SliderStyled = styled(Section)`
       }
     }
   }
+  @media (min-width: 425px) {
+    .content {
+      .img-container {
+        min-height: 563px;
+      }
+    }
+  }
   @media (min-width: 600px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgb(25, 25, 25)),
       url(${medImgURL}${(props) => props.imgURL});
+    min-height: 371px;
+    padding-bottom: 0;
     .content {
       flex-direction: row;
       .img-container {
         width: 50%;
-        min-height: 250px;
+        min-height: 314px;
       }
       .details-container {
         margin-top: 0;
@@ -115,13 +127,23 @@ export const SliderStyled = styled(Section)`
     }
   }
   @media (min-width: 1024px) {
+    min-height: 433px;
     .content {
+      .img-container {
+        min-height: 394px;
+      }
       .details-container {
         .overview {
           line-height: 1.5rem;
           font-size: 1rem;
         }
       }
+    }
+  }
+  @media (min-width: 1440px) {
+    min-height: 460px;
+    .img-container {
+      min-height: 417px;
     }
   }
 `;

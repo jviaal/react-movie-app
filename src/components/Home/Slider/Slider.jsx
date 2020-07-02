@@ -24,17 +24,7 @@ function Slider() {
     }
   };
   return (
-    <SliderStyled
-      imgURL={popularMovies[currentMovieIndex].backdrop_path}
-      key={currentMovieIndex}
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      exit={{
-        opacity: 0,
-        x: 150,
-      }}
-    >
+    <SliderStyled imgURL={popularMovies[currentMovieIndex].backdrop_path}>
       <motion.div className="content">
         <motion.div className="img-container">
           <Link to={`/movie/${popularMovies[currentMovieIndex].id}`}>
